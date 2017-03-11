@@ -2,6 +2,8 @@
 #include<stdio.h>
 #include<conio.h>
 #include<math.h>
+#include<windows.h>
+void gotoxy(int x, int y);
 int main()
 {
 	int max_ecu=10, max_inc=10;
@@ -9,9 +11,8 @@ int main()
 	float resul[10];
 	int n_ecu,n_inc;
 	int i,j,k,ln,cl,cl1,cl2;
-	textbackground(WHITE);
-	clrscr();
-	textcolor(LIGHTBLUE);
+	system("color F4");
+	system("cls");
 	//Funcion de hacer variables
 	i=j=k=0;
 	for(i=0;i<max_ecu;i++){
@@ -19,7 +20,7 @@ int main()
 		}
 	}
 	//fin de hacer cero las  variables
-	clrscr();
+	system("cls");
 	gotoxy(35,1);printf("METODO DE GAUSS JORDAN");
 	for(i=1;i<=80;i++)
 	{
@@ -117,3 +118,11 @@ int main()
 	}
 	getch();
 }
+void gotoxy(int x,int y){  
+      HANDLE hcon;  
+      hcon = GetStdHandle(STD_OUTPUT_HANDLE);  
+      COORD dwPos;  
+      dwPos.X = x;  
+      dwPos.Y= y;  
+      SetConsoleCursorPosition(hcon,dwPos);  
+ }  
