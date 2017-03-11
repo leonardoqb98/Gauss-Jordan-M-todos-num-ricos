@@ -86,16 +86,20 @@ int main()
 	int z;
 	float pivote=0.0;
 	float elem_zero=0.0;
-	for(i=1;i<=n_ecu;i++)
+	for(i=0;i<=n_ecu;i++)
 	{
 	pivote=mat_coef[i][j];
+	printf("Primer for %d\n", mat_coef[i][j]);
 	for(z=1;z<=n_ecu;z++)
 	 {
+	 	printf("Segundo for %d\n", mat_coef[i][z]);
 			mat_coef[i][z]=mat_coef[i][z]/pivote;
 			for(k=1;k<=n_ecu;k++)
 			{
+				printf("Tercer for %d\n", mat_coef[k][i]);
 				if(k!=i)
 				{
+
 					elem_zero=mat_coef[k][i];
 					}
 					for(j=i;j<=(n_ecu+1);j++){
